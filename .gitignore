@@ -13,7 +13,7 @@ lerna-debug.log
 
 # Package managers
 yarn-error.log
-package-lock.json
+# package-lock.json
 packages/**/yarn.lock
 
 **/dist
