@@ -20,9 +20,7 @@ export function * initializeWeb3 (options) {
       const { ethereum } = window
       web3 = new Web3(ethereum)
       try {
-        // ethereum.enable() will return the selected account
-        // unless user opts out and then it will return undefined
-        const selectedAccount = yield call([ethereum, 'enable'])
+        const selectedAccount = (yield call([web3.eth, 'requestAccounts']))[0]
 
         yield put({ type: Action.WEB3_INITIALIZED })
 
